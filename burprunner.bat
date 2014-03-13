@@ -7,3 +7,6 @@ REM pause
 
 REM 1GB memory - you can change it
 java -jar -Xmx1g "%~dp0%latest%"
+
+REM if you have SSL issue, use this:
+REM java -Djsse.enableSNIExtension=false -jar -Xmx2g "%~dp0%latest%"
