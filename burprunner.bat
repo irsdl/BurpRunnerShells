@@ -5,8 +5,8 @@ for /f "tokens=*" %%a in ('dir /b /od /a-d %~dp0burpsuite*.jar') do set latest=%
 REM echo %~dp0%latest%
 REM pause
 
-REM 1GB memory - you can change it
-java -jar -Xmx1g "%~dp0%latest%"
+REM 1GB memory, 256MB perm size - you can change them
+java -jar -Xmx1g -XX:MaxPermSize=256m "%~dp0%latest%"
 
 REM if you have SSL issue, use this:
-REM java -Djsse.enableSNIExtension=false -jar -Xmx2g "%~dp0%latest%"
+REM java -Djsse.enableSNIExtension=false -jar -Xmx2g -XX:MaxPermSize=512m "%~dp0%latest%"
